@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+#
+set -x
+
+aclocal -I include
+autoheader
+automake --add-missing --copy
+libtoolize -c --force
+glibtoolize -c --force
+autoconf
+rm -fr autom4te.cache
